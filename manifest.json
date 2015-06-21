@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+
+  "name": "Cyberoam Auto Login",
+  "description": "Automatic Cyberoam login.Just you need to save it once in the Popup and leave it on the extension.",
+  "version": "1.1",
+  "background": {
+      "persistent": true,
+      "scripts": [ "bg.js" ]},
+  
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"},
+
+"icons": { "16": "icon.png",
+           "48": "icon48.png",
+          "128": "icon128.png" },
+ "permissions": [
+    "tabs", "https://172.16.1.1:8090/httpclient.html"
+    
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://172.16.1.1:8090/httpclient.html","https://*/*httpclient.html*","https://172.16.1.1:8090/*","https://172.16.1.1:8090/"],
+            "js": ["bhuwan.js"]
+    }
+  ]
+
+
+}
